@@ -5,7 +5,7 @@
 
 describe("Stack", function()
   local Stack = require "stack"
-  it("Can push a value onto the stack", function() 
+  it("Can push a value onto the stack", function()
     local s = Stack:new()
     s:push("A value")
     assert.equals("A value", s:top())
@@ -38,5 +38,4 @@ describe("Stack", function()
     s:pop()
     assert.is_true(s:isempty())
   end)
-  
 end)
