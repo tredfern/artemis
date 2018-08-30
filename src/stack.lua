@@ -13,7 +13,7 @@ function Stack:new()
 end
 
 function Stack:push(value)
-  table.insert(self, value)
+  self[#self + 1] = value
 end
 
 function Stack:pop()

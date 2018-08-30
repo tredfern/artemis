@@ -13,7 +13,7 @@ function Queue:new()
 end
 
 function Queue:enqueue(value)
-  table.insert(self, value)
+  self[#self + 1] = value
 end
 
 function Queue:dequeue()
@@ -21,7 +21,7 @@ function Queue:dequeue()
 end
 
 function Queue:front()
-  return self[#self]
+  return self[1]
 end
 
 function Queue:isempty()
