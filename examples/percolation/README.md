@@ -1,5 +1,13 @@
 # Percolation
-The percolation simulation is built on the (course)[http://coursera.cs.princeton.edu/algs4/assignments/percolation.html]
+The percolation simulation is built on the course from http://coursera.cs.princeton.edu/algs4/assignments/percolation.html.
+
+# Running the Example
+
+This requires [Love 2D](https://love2d.org) to run. 
+
+~~~~
+ $ love ./examples/percolation
+~~~~
 
 # Using test files
 
