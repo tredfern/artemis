@@ -35,8 +35,7 @@ end
 function UnionFind:find(x)
   -- If it doesn't exist let's add it
   if self[x] == nil then
-    self[x] = x
-    self.tree_size[x] = 1
+    self:add(x)
   end
 
   if self[x] == x then
@@ -49,6 +48,13 @@ end
 function UnionFind:connected(ref1, ref2)
   -- find if they have the same root
   return self:find(ref1) == self:find(ref2)
+end
+
+function UnionFind:add(x)
+  if self[x] == nil then
+    self[x] = x
+    self.tree_size[x] = 1
+  end
 end
 
 return UnionFind
