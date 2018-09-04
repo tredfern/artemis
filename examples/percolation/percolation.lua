@@ -30,9 +30,9 @@ function Percolation:open(row, col)
   self.uf_nobottom:add(id)
 
   local neighbors = {
-    { row -1, col }, 
-    { row + 1, col }, 
-    { row, col + 1 }, 
+    { row -1, col },
+    { row + 1, col },
+    { row, col + 1 },
     { row, col - 1 }
   }
   for _, v in ipairs(neighbors) do
@@ -65,7 +65,7 @@ function Percolation:getId(row, col)
   elseif row > self.size then
     return self.bottom
   end
-    
+
   return string.format("%d, %d", row, col)
 end
 
