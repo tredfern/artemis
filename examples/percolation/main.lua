@@ -1,3 +1,8 @@
+-- Copyright (c) 2018 Redfern, Trevor <trevorredfern@gmail.com>
+--
+-- This software is released under the MIT License.
+-- https://opensource.org/licenses/MIT
+
 --[[
 -- This provides an implementation to the percolation problem outlined by
 -- http://coursera.cs.princeton.edu/algs4/assignments/percolation.html
