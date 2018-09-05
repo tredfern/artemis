@@ -5,10 +5,14 @@
 
 local RandomizedQueue = {}
 
-function RandomizedQueue:new()
+function RandomizedQueue:new(t)
+  t = t or {}
   local rq = {}
   self.__index = self
   setmetatable(rq, self)
+  for _, v in ipairs(t) do
+    rq:enqueue(v)
+  end
   return rq
 end
 
@@ -22,7 +26,10 @@ end
 
 function RandomizedQueue:dequeue()
   local i = math.random(#self)
-  return table.remove(self, i)
+  local r = self[i]
+  self[i] = self[#self]
+  self[#self] = nil
+  return r
 end
 
 function RandomizedQueue:sample()

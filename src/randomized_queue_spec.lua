@@ -47,4 +47,12 @@ describe("Randomized Queue", function()
     assert.equals("item 1", r:dequeue())
     assert.is_true(r:isempty())
   end)
+
+  it("can be initialized with a table of values", function()
+    local r = RandomizedQueue:new{1, 2, 3, 4}
+    assert.is_false(r:isempty())
+    assert.equals(4, #r)
+    assert.equals(1, r[1])
+    assert.equals(3, r[3])
+  end)
 end)
