@@ -15,7 +15,7 @@ describe("RandomIterator", function()
 
     local count = 1
     for v in irandom(t) do
-      assert.equals(v, results[count])
+      assert.equals(results[count], v, "count: " .. count)
       count = count + 1
     end
   end)

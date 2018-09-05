@@ -3,16 +3,22 @@
 -- This software is released under the MIT License.
 -- https://opensource.org/licenses/MIT
 
-
--- Uses a queue to implement the random operation.
-local RandomizedQueue = require "src.randomized_queue"
-
 return function(t)
-  local queue = RandomizedQueue:new(t)
+  local replaced = {}
+  local size = #t
+
+  --[[ Chooses an item and maintains a list of replaced entries
+  -- in a table. Swaps the last index into the space of the
+  -- randomly chosen entry. ]]
   return function()
-    if queue:isempty() then
+    if size == 0 then
       return nil
     end
-    return queue:dequeue()
+
+    local i = math.random(size)
+    local item = replaced[i] or t[i]
+    replaced[i] = replaced[size] or t[size]
+    size = size - 1
+    return item
   end
 end
