@@ -32,7 +32,6 @@ local function loadNextFile()
     local lines = love.filesystem.lines("test_files/" .. files[current_file])
     percolation = nil
     for l in lines do
-      print( l )
       if percolation == nil then
         percolation = Percolation:new(tonumber(l))
       else
