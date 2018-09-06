@@ -1,6 +1,6 @@
 # .travis.yml
 #
-  language: pytho
+  language: python
   sudo: false
  
   env:
@@ -22,8 +22,8 @@
     - luarocks install luacov-coveralls
 
   script:
-    - luacheck main.lua ./src
-    - busted . --verbose --coverage
+    - luacheck init.lua ./src
+    - busted --run=travis
 
   after_success:
     - luacov-coveralls --exclude $TRAVIS_BUILD_DIR/lua_install

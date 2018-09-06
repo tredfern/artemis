@@ -1,0 +1,9 @@
+return {
+  _all = {
+    ROOT = {"."}
+  },
+  travis = {
+    verbose = true,
+    coverage = true
+  }
+}
