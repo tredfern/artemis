@@ -1,6 +1,7 @@
 return {
   _all = {
-    ROOT = {"."}
+    ROOT = {"."},
+    helper = "test_helpers/busted_extensions.lua"
   },
   travis = {
     verbose = true,
