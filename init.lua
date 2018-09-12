@@ -6,10 +6,13 @@
 local path = (...):match("(.-)[^%.]+$")
 
 return {
-  Deque             = require(path .. "src.deque"),
-  Queue             = require(path .. "src.queue"),
-  RandomizedQueue   = require(path .. "src.randomized_queue"),
-  RandomIterator    = require(path .. "src.random_iterator"),
-  Stack             = require(path .. "src.stack"),
-  UnionFind         = require(path .. "src.unionfind"),
+  deque             = require(path .. "src.deque"),
+  queue             = require(path .. "src.queue"),
+  randomizedqueue   = require(path .. "src.randomized_queue"),
+  randomiterator    = require(path .. "src.random_iterator"),
+  stack             = require(path .. "src.stack"),
+  unionfind         = require(path .. "src.unionfind"),
+  sorts = {
+    shell = require(path .. "src.shellsort")
+  }
 }
