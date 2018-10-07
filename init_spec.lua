@@ -33,7 +33,11 @@ describe("Artemis", function()
     assert.is_not.equal(nil, artemis.sorts)
   end)
 
-  it("has shell short", function()
+  it("has shell sort", function()
     assert.is_not.equal(nil, artemis.sorts.shell)
+  end)
+
+  it("has merge sort", function()
+    assert.is_not.equal(nil, artemis.sorts.merge)
   end)
 end)

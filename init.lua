@@ -13,6 +13,7 @@ return {
   stack             = require(path .. "src.stack"),
   unionfind         = require(path .. "src.unionfind"),
   sorts = {
-    shell = require(path .. "src.shellsort")
+    shell = require(path .. "src.shellsort"),
+    merge = require(path .. "src.mergesort"),
   }
 }
