@@ -13,7 +13,7 @@ local function merge(list, low, mid, high, compare)
   end
 
   for k=low,high do
-    if i > mid  then 
+    if i > mid  then
       list[k] = result[j]
       j = j + 1
     elseif j > high then
