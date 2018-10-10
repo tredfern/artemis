@@ -7,6 +7,7 @@ local path = (...):match("(.-)[^%.]+$")
 
 return {
   deque             = require(path .. "src.deque"),
+  grid              = require(path .. "src.grid"),
   queue             = require(path .. "src.queue"),
   randomizedqueue   = require(path .. "src.randomized_queue"),
   randomiterator    = require(path .. "src.random_iterator"),
@@ -15,5 +16,5 @@ return {
   sorts = {
     shell = require(path .. "src.shellsort"),
     merge = require(path .. "src.mergesort"),
-  }
+  },
 }

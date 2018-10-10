@@ -29,6 +29,10 @@ describe("Artemis", function()
     assert.is_not.equals(nil, artemis.stack)
   end)
 
+  it("provides a grid implementation", function()
+    assert.is_not.equals(nil, artemis.grid)
+  end)
+
   it("loads sorts", function()
     assert.is_not.equal(nil, artemis.sorts)
   end)
