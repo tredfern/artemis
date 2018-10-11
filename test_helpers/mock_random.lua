@@ -3,7 +3,7 @@
 -- This software is released under the MIT License.
 -- https://opensource.org/licenses/MIT
 
-local Queue = require "src.queue"
+local Queue = require "queue"
 local results = Queue:new()
 local oldrandom = math.random
 
