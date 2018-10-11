@@ -3,7 +3,7 @@
 -- This software is released under the MIT License.
 -- https://opensource.org/licenses/MIT
 
-local defaultcompare = require "src.defaultsortcompare"
+local defaultcompare = require "defaultsortcompare"
 
 local function merge(list, low, mid, high, compare)
   local i, j = low, mid + 1

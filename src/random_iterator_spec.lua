@@ -4,7 +4,7 @@
 -- https://opensource.org/licenses/MIT
 
 describe("RandomIterator", function()
-  local irandom = require "src.random_iterator"
+  local irandom = require "random_iterator"
   local MockRandom = require "test_helpers.mock_random"
 
   it("returns elements in a random sequence", function()

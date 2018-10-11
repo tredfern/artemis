@@ -4,7 +4,7 @@
 -- https://opensource.org/licenses/MIT
 
 describe("ShellSort", function()
-  local ShellSort = require "src.shellsort"
+  local ShellSort = require "shellsort"
   it("sorts elements as expected", function()
     local list = { "orange", "apple", "banana", "rhubarb", "nectarine", "peach", "blueberry" }
     local r = ShellSort(list)

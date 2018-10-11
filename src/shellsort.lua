@@ -3,7 +3,7 @@
 -- This software is released under the MIT License.
 -- https://opensource.org/licenses/MIT
 
-local defaultCompare = require "src.defaultsortcompare"
+local defaultCompare = require "defaultsortcompare"
 
 local ShellSort = function(set, compare)
   compare = compare or defaultCompare

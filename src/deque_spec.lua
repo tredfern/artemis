@@ -4,7 +4,7 @@
 -- https://opensource.org/licenses/MIT
 
 describe("Deque", function()
-  local Deque = require "src.deque"
+  local Deque = require "deque"
   it("Knows when it is empty", function()
     local d = Deque:new()
     assert.is_true(d:isempty())

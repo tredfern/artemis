@@ -4,7 +4,7 @@
 -- https://opensource.org/licenses/MIT
 
 describe("Randomized Queue", function()
-  local RandomizedQueue = require "src.randomized_queue"
+  local RandomizedQueue = require "randomized_queue"
   local MockRandom = require "test_helpers.mock_random"
 
   it("Knows when it is empty", function()

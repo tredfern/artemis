@@ -4,7 +4,7 @@
 -- https://opensource.org/licenses/MIT
 
 describe("Grid", function()
-  local Grid = require "src.grid"
+  local Grid = require "grid"
   it("has a width and height", function()
     local g = Grid:new(39, 48)
     assert.equals(39, g.width)

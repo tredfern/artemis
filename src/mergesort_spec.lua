@@ -4,7 +4,7 @@
 -- https://opensource.org/licenses/MIT
 
 describe("MergeSort", function()
-  local MergeSort = require "src.mergesort"
+  local MergeSort = require "mergesort"
 
   it("sorts elements as expected", function()
     local list = { "orange", "apple", "banana", "rhubarb", "nectarine", "peach", "blueberry" }
