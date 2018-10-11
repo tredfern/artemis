@@ -3,7 +3,8 @@
 -- This software is released under the MIT License.
 -- https://opensource.org/licenses/MIT
 
-local defaultCompare = require "defaultsortcompare"
+local path = select(1, ...):match(".+%.") or ""
+local defaultCompare = require (path.."defaultsortcompare")
 
 local ShellSort = function(set, compare)
   compare = compare or defaultCompare

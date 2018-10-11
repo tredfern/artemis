@@ -3,7 +3,8 @@
 -- This software is released under the MIT License.
 -- https://opensource.org/licenses/MIT
 
-local defaultcompare = require "defaultsortcompare"
+local path = select(1, ...):match(".+%.") or ""
+local defaultcompare = require (path.."defaultsortcompare")
 
 local function merge(list, low, mid, high, compare)
   local i, j = low, mid + 1
