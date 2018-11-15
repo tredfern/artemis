@@ -22,6 +22,21 @@ local function array_matches(state, arguments)
   return matched
 end
 
+local function array_includes(state, arguments)
+  local expected = arguments[1]
+  local tested = arguments[2]
+  local matched = false
+
+  for i,v in ipairs(tested) do
+    matched = matched or v == expected
+  end
+  return matched
+end
+
 say:set("assertion.array_matches.positive", "Expected %s to match: %s")
 say:set("assertion.array_matches.negative", "Expected %s to not match: %s")
 assert:register("assertion", "array_matches", array_matches, "assertion.array_matches.positive", "assertion.array_matches.negative")
+
+say:set("assertion.array_includes.positive", "Expected %s to be in: %s")
+say:set("assertion.array_includes.negative", "Expected %s to be in: %s")
+assert:register("assertion", "array_includes", array_includes, "assertion.array_includes.positive", "assertion.array_includes.negative")
