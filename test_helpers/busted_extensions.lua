@@ -3,4 +3,4 @@
 -- This software is released under the MIT License.
 -- https://opensource.org/licenses/MIT
 
-require "test_helpers/array_assertions"
+require "test_helpers.array_assertions"
