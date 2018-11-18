@@ -5,8 +5,8 @@
 
 local bag = {}
 
-function bag:new()
-  local b = {}
+function bag:new(table)
+  local b = table or {}
   setmetatable(b, self)
   self.__index = self
   return b
