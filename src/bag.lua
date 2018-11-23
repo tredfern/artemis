@@ -28,6 +28,14 @@ function bag:index_of(item)
   return nil
 end
 
+function bag:first()
+  return self[1]
+end
+
+function bag:last()
+  return self[#self]
+end
+
 function bag:contains(item)
   return self:index_of(item) ~= nil
 end
