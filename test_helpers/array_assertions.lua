@@ -33,6 +33,11 @@ local function array_includes(state, arguments)
   return matched
 end
 
+local function empty_array(state, arguments)
+  local test = arguments[1]
+  return #test == 0
+end
+
 say:set("assertion.array_matches.positive", "Expected %s to match: %s")
 say:set("assertion.array_matches.negative", "Expected %s to not match: %s")
 assert:register("assertion", "array_matches", array_matches, "assertion.array_matches.positive", "assertion.array_matches.negative")
@@ -40,3 +45,7 @@ assert:register("assertion", "array_matches", array_matches, "assertion.array_ma
 say:set("assertion.array_includes.positive", "Expected %s to be in: %s")
 say:set("assertion.array_includes.negative", "Expected %s to be in: %s")
 assert:register("assertion", "array_includes", array_includes, "assertion.array_includes.positive", "assertion.array_includes.negative")
+
+say:set("assertion.empty_array.positive", "Expected %s to be empty")
+say:set("assertion.empty_array.negative", "Expected %s to not be empty")
+assert:register("assertion", "empty_array", empty_array, "assertion.empty_array.positive", "assertion.empty_array.negative")
