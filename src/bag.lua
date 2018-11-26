@@ -58,4 +58,14 @@ function bag:contains(item)
   return self:index_of(item) ~= nil
 end
 
+function bag:where(filter)
+  local result = bag:new()
+  for _, v in ipairs(self) do
+    if filter(v) then
+      result:add(v)
+    end
+  end
+  return result
+end
+
 return bag

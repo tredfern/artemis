@@ -80,4 +80,11 @@ describe("Bag", function()
     local none = b:last(function(c) return c == "four" end)
     assert.equals(nil, none)
   end)
+
+  it("can get a filtered bag matching a function", function()
+    local b = bag:new({1,2,3,4,5,6,7,8})
+    local even = function(c) return c % 2 == 0 end
+    local filtered = b:where(even)
+    assert.array_matches({2,4,6,8}, filtered)
+  end)
 end)
