@@ -87,4 +87,10 @@ describe("Bag", function()
     local filtered = b:where(even)
     assert.array_matches({2,4,6,8}, filtered)
   end)
+
+  it("if you try to remove nil it doesn't do anything", function()
+    local b = bag:new{1,2,3,4,5}
+    b:remove(nil)
+    assert.array_matches({1,2,3,4,5}, b)
+  end)
 end)

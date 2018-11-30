@@ -18,7 +18,9 @@ end
 
 function bag:remove(item)
   local i = self:index_of(item)
-  table.remove(self, i)
+  if i then
+    table.remove(self, i)
+  end
 end
 
 function bag:index_of(item)
