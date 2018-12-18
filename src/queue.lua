@@ -5,8 +5,8 @@
 
 local Queue = {}
 
-function Queue:new()
-  local q = {}
+function Queue:new(base)
+  local q = base or {}
   setmetatable(q, Queue)
   self.__index = self
   return q
@@ -14,6 +14,9 @@ end
 
 function Queue:enqueue(value)
   self[#self + 1] = value
+  if self.maximum and #self > self.maximum then
+    self:dequeue()
+  end
 end
 
 function Queue:dequeue()

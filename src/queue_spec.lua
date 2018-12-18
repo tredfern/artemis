@@ -50,4 +50,17 @@ describe("Queues", function()
     q:enqueue("item 3")
     assert.equals("item 1", q:front())
   end)
+
+  it("can set the maximum size of the queue which automatically dequeues old values", function()
+    local q = Queue:new{ maximum = 5 }
+    q:enqueue(1)
+    q:enqueue(2)
+    q:enqueue(3)
+    q:enqueue(4)
+    q:enqueue(5)
+    q:enqueue(6)
+
+    assert.equals(5, #q)
+    assert.equals(2, q:dequeue())
+  end)
 end)
