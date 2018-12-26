@@ -30,11 +30,7 @@ function list:index_of(item)
   return nil
 end
 
-function list:first(search)
-  if search == nil then
-    return self[1]
-  end
-
+function list:find(search)
   for _, v in ipairs(self) do
     if search(v) then
       return v
@@ -43,17 +39,21 @@ function list:first(search)
   return nil
 end
 
-function list:last(search)
-  if search == nil then
-    return self[#self]
-  end
-
+function list:find_last(search)
   for i = #self, 1, -1 do
     if search(self[i]) then
       return self[i]
     end
   end
   return nil
+end
+
+function list:first()
+  return self[1]
+end
+
+function list:last()
+  return self[#self]
 end
 
 function list:contains(item)
