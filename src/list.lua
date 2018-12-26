@@ -3,34 +3,34 @@
 -- This software is released under the MIT License.
 -- https://opensource.org/licenses/MIT
 
-local bag = {}
+local list = {}
 
-function bag:new(table)
+function list:new(table)
   local b = table or {}
   setmetatable(b, self)
   self.__index = self
   return b
 end
 
-function bag:add(item)
+function list:add(item)
   self[#self + 1] = item
 end
 
-function bag:remove(item)
+function list:remove(item)
   local i = self:index_of(item)
   if i then
     table.remove(self, i)
   end
 end
 
-function bag:index_of(item)
+function list:index_of(item)
   for i,v in ipairs(self) do
     if item == v then return i end
   end
   return nil
 end
 
-function bag:first(search)
+function list:first(search)
   if search == nil then
     return self[1]
   end
@@ -43,7 +43,7 @@ function bag:first(search)
   return nil
 end
 
-function bag:last(search)
+function list:last(search)
   if search == nil then
     return self[#self]
   end
@@ -56,12 +56,12 @@ function bag:last(search)
   return nil
 end
 
-function bag:contains(item)
+function list:contains(item)
   return self:index_of(item) ~= nil
 end
 
-function bag:where(filter)
-  local result = bag:new()
+function list:where(filter)
+  local result = list:new()
   for _, v in ipairs(self) do
     if filter(v) then
       result:add(v)
@@ -70,4 +70,4 @@ function bag:where(filter)
   return result
 end
 
-return bag
+return list
