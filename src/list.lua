@@ -48,12 +48,30 @@ function list:find_last(search)
   return nil
 end
 
-function list:first()
+function list:first(n)
+  if n then
+    return self:slice(1, n)
+  end
+
   return self[1]
 end
 
-function list:last()
+function list:last(n)
+  if n then
+    return self:slice(#self - n + 1, n)
+  end
+
   return self[#self]
+end
+
+function list:slice(start, count)
+  local l = list:new()
+
+  for i=start,start + count - 1 do
+    l:add(self[i])
+  end
+
+  return l
 end
 
 function list:contains(item)

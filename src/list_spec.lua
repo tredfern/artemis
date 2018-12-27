@@ -93,4 +93,22 @@ describe("List", function()
     b:remove(nil)
     assert.array_matches({1,2,3,4,5}, b)
   end)
+
+  it("can return the first(n) elements from the list", function()
+    local b = list:new{1,2,3,4,5}
+    local l = b:first(3)
+    assert.array_matches({1,2,3}, l)
+  end)
+
+  it("can return the last(n) elements from the list", function()
+    local b = list:new{1, 2, 3, 4, 5}
+    local l = b:last(3)
+    assert.array_matches({3, 4, 5}, l)
+  end)
+
+  it("can return a slice of the list", function()
+    local b = list:new{1, 2, 3, 4, 5}
+    local l = b:slice(2, 3)
+    assert.array_matches({2, 3, 4}, l)
+  end)
 end)
