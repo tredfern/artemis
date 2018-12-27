@@ -111,4 +111,18 @@ describe("List", function()
     local l = b:slice(2, 3)
     assert.array_matches({2, 3, 4}, l)
   end)
+
+  it("can be cleared out", function()
+    local l = list:new{1, 2, 3, 4, 5}
+    assert.is_false(l:isempty())
+    l:clear()
+    assert.is_true(l:isempty())
+  end)
+
+  it("is empty with nothing added", function()
+    local l = list:new()
+    assert.is_true(l:isempty())
+    l:add("foo")
+    assert.is_false(l:isempty())
+  end)
 end)

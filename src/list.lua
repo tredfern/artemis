@@ -88,4 +88,14 @@ function list:where(filter)
   return result
 end
 
+function list:isempty()
+  return #self == 0
+end
+
+function list:clear()
+  for i, _ in ipairs(self) do
+    self[i] = nil
+  end
+end
+
 return list
